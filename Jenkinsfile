@@ -17,7 +17,7 @@ pipeline {
         stage('Build and Test') {
             steps {
                 // Activate a Python virtual environment.
-                bat "\"${PYTHON_HOME}\\python\" -m venv venv"
+                bat "\"${PYTHON_HOME}\\python.exe\" -m venv venv"
                 bat "venv\\Scripts\\activate"
 
                 // Install project dependencies and run your Python script.
