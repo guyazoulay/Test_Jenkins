@@ -11,8 +11,11 @@ pipeline {
 
         stage('Build and Test') {
             steps {
+                echo 'Running the script'
                 // Run your Python script.
                 sh 'python hello.py'
+
+                echo 'finished running the script'
             }
         }
     }
