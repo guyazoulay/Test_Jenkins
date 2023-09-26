@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        // Define the path to your Python executable on Windows.
+        PYTHON_HOME = 'C:\\path\\to\\python\\executable'  // Replace with your Python path
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -11,11 +16,13 @@ pipeline {
 
         stage('Build and Test') {
             steps {
-                echo 'Running the script'
-                // Run your Python script.
-                bash 'python hello.py'
+                // Activate a Python virtual environment.
+                bat "\"${PYTHON_HOME}\\python\" -m venv venv"
+                bat "venv\\Scripts\\activate"
 
-                echo 'finished running the script'
+                // Install project dependencies and run your Python script.
+                bat "\"${PYTHON_HOME}\\python\" -m pip install -r requirements.txt"
+                bat "\"${PYTHON_HOME}\\python\" hello.py"
             }
         }
     }
