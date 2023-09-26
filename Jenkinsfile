@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define the path to your Python executable on Windows.
-        PYTHON_HOME = 'C:\\path\\to\\python\\executable'  // Replace with your Python path
+        PYTHON_HOME = 'C:\Users\97254\PycharmProjects\practice\venv\Scripts'  // Replace with your Python path
     }
 
     stages {
