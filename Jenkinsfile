@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Running the script'
                 // Run your Python script.
-                sh 'python hello.py'
+                bash 'python hello.py'
 
                 echo 'finished running the script'
             }
